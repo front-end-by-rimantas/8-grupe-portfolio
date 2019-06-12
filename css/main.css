@@ -6,6 +6,8 @@ body * {
     box-sizing: border-box;
 }
 
+/* colors classes */
+
 .bg-red {
     background-color: var(--red-color);
 }
@@ -21,6 +23,8 @@ body * {
 .bg-grey {
     background-color: var(--grey-color);
 }
+
+/* basic structure and responsive design */
 
 .container {
     display: inline-block;
@@ -55,4 +59,69 @@ body * {
                 width: 100%;
                 margin: 0;
             }
+    }
+
+/* header */
+
+/* hero */
+
+/* headings */
+
+h2 {
+    display: inline-block;
+    width: 100%;
+    text-transform: uppercase;
+    color: var(--black-color);
+    text-align: center;
+    position: relative;
+    font-size: 34px;
+    line-height: 60px;
+}
+    h2 > span {
+        color: var(--red-color);
+    }
+    h2::after {
+        content: "";
+        display: inline-block;
+        width: 60px;
+        height: 3px;
+        background-color: var(--black-color);
+        position: absolute;
+        bottom: 0;
+        left: calc((100% - 60px) / 2);
+    }
+    h2.heading-left {
+        text-align: left;
+    }
+        h2.heading-left::after {
+            left: 0;
+        }
+
+/* about me */
+
+/* services */
+
+/* resume */
+
+/* freelance */
+
+/* portfolio */
+
+/* testimonials */
+
+/* blog */
+
+/* contact me */
+
+/* footer */
+
+footer {
+    text-align: center;
+    color: #FFF;
+}
+    footer > .footer-top {
+        padding: 30px 0;
+    }
+    footer > .footer-bottom {
+        padding: 20px 0;
     }

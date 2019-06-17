@@ -124,6 +124,7 @@ body * {
 h2 {
     display: inline-block;
     width: 100%;
+    margin-bottom: 40px;
     text-transform: uppercase;
     color: var(--black-color);
     text-align: center;
@@ -154,6 +155,26 @@ h2 {
 /* about me */
 
 /* services */
+.service {
+    display: inline-block;
+    width: 32%;
+    float: left;
+    margin-left: 2%;
+    margin-top: 15px;
+    padding: 20px;
+    text-align: center;
+    background-color: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #CCC;
+}
+    .service:nth-child(3n+1) {
+        margin-left: 0;
+    }
+    .service:nth-child(1),
+    .service:nth-child(2),
+    .service:nth-child(3) {
+        margin-top: 0;
+    }
 
 /* resume */
 

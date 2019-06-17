@@ -22,22 +22,36 @@ function elementHeight( path ) {
 function headerScrollDetector() {
     var sections = [],
         scroll = window.scrollY + elementHeight('header'),
-        headerLinkCount = document.querySelectorAll('header nav > a').length,
+        links = document.querySelectorAll('header nav > a'),
+        headerLinkCount = links.length,
         top = document.getElementById('resume').offsetTop,
-        sectionID = '';
+        sectionID = '',
+        activeSectionIndex = 0,
+        clname = '';
 
+    // searching for section index user is looking at
     for ( var i=0; i<headerLinkCount; i++ ) {
-        sectionID = document.querySelectorAll('header nav > a')[i].getAttribute('href');
+        sectionID = links[i].getAttribute('href');
         if ( sectionID === '#' ) {
             sections.push(0);
             continue;
         }
         top = document.querySelector(sectionID).offsetTop;
         sections.push(top);
+        if ( top <= scroll ) {
+            activeSectionIndex = i;
+        } else {
+            break;
+        }
     }
 
-    console.log( sections );
-    console.log( scroll );
-    
+    // remove class "active" from all links
+    for ( var i=0; i<links.length; i++ ) {
+        clname = ' ' + links[i].className + ' ';
+        clname = clname.replace(" active ", " ");
+        links[i].className = clname;
+    }
+    // add class "active" to particular link
+    links[activeSectionIndex].className += ' active';
     
 }

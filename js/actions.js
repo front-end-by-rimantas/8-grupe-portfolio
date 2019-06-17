@@ -1,7 +1,10 @@
 "use strict";
 
 // general
-window.addEventListener("scroll", headerScrollDetector);
+window.addEventListener("scroll", function(){
+    headerScrollDetector();
+    headerStyle();
+});
 
 // footer
 document.getElementById('footer_icons').innerHTML = generateIcons( footerIcons );

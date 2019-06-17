@@ -71,6 +71,10 @@ body * {
     z-index: 1;
     box-shadow: 0 2px 8px rgba(0,0,0,0.2);
 }
+    #header.transparent {
+        background-color: transparent;
+        box-shadow: none;
+    }
     #header .logo {
         display: inline-block;
         float: left;
@@ -80,6 +84,9 @@ body * {
         font-size: 24px;
         line-height: 30px;
     }
+        #header.transparent .logo {
+            color: #FFF;
+        }
     #header nav {
         display: inline-block;
         float: right;
@@ -95,6 +102,9 @@ body * {
             line-height: 30px;
             font-weight: bold;
         }
+            #header.transparent nav > a {
+                color: #FFF;
+            }
             #header nav > a:first-child {
                 margin: 0;
             }

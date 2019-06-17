@@ -55,3 +55,17 @@ function headerScrollDetector() {
     links[activeSectionIndex].className += ' active';
     
 }
+
+function headerStyle() {
+    var scroll = window.scrollY,
+        limit = 80,
+        element = document.getElementById('header'),
+        clname = '';
+    if ( scroll > limit ) {
+        clname = ' ' + element.className + ' ';
+        clname = clname.replace(" transparent ", " ");
+        element.className = clname;
+    } else {
+        element.className += ' transparent';
+    }
+}

@@ -8,7 +8,7 @@ function generateIcons( data ) {
              data[i].link === '' ) {
             continue;
         }
-        HTML += '<a href="'+data[i].link+'" target="_blank" class="fa fa-'+data[i].icon+'"></a>';
+        HTML += `<a href="${data[i].link}" target="_blank" class="fa fa-${data[i].icon}"></a>`;
     }
 
     return HTML;
@@ -85,6 +85,12 @@ function generateServices( data ) {
                     <h3>'+data[i].title+'</h3>\
                     <p>'+data[i].description+'</p>\
                 </div>';
+
+        // HTML += `<div class="service">
+        //             <i class="fa fa-${data[i].icon}"></i>
+        //             <h3>${data[i].title}</h3>
+        //             <p>${data[i].description}</p>
+        //         </div>`;
     }
 
     return HTML;
@@ -102,13 +108,13 @@ function generateBlog( data ) {
     var HTML = '';
 
     for ( var i=0; i<data.length; i++ ) {
-        HTML += '<div class="blog">\
-                    <div class="img" style="background-image: url(img/blog/'+data[i].photo+');"></div>\
-                    <h3>'+data[i].heading+'</h3>\
-                    <p>Posted on '+data[i].date+'</p>\
-                    <p>'+data[i].description+' ...</p>\
-                    <a href="'+data[i].link+'" class="btn">Read more</a>\
-                </div>';
+        HTML += `<div class="blog">
+                    <div class="img" style="background-image: url(img/blog/${data[i].photo});"></div>
+                    <h3>${data[i].heading}</h3>
+                    <p>Posted on ${data[i].date}</p>
+                    <p>${data[i].description} ...</p>
+                    <a href="${data[i].link}" class="btn">Read more</a>
+                </div>`;
     }
 
     return HTML;

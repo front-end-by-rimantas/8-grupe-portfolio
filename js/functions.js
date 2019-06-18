@@ -98,6 +98,22 @@ function generateServices( data ) {
 
 // blogs
 
+function generateBlog( data ) {
+    var HTML = '';
+
+    for ( var i=0; i<data.length; i++ ) {
+        HTML += '<div class="blog">\
+                    <div class="img" style="background-image: url(img/blog/'+data[i].photo+');"></div>\
+                    <h3>'+data[i].heading+'</h3>\
+                    <p>Posted on '+data[i].date+'</p>\
+                    <p>'+data[i].description+' ...</p>\
+                    <a href="'+data[i].link+'" class="btn">Read more</a>\
+                </div>';
+    }
+
+    return HTML;
+}
+
 // contact me
 
 // footer

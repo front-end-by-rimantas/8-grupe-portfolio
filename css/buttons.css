@@ -1,0 +1,11 @@
+.btn {
+    display: inline-block;
+    padding: 0 10px;
+    text-transform: uppercase;
+    background-color: var(--red-color);
+    color: #FFF;
+    text-decoration: none;
+    line-height: 30px;
+    font-weight: bold;
+    border-radius: 15px;
+}

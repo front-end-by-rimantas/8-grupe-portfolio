@@ -220,6 +220,11 @@ h2 {
         margin-bottom: 10px;
     }
 
+    .container > .row.view-all {
+        text-align: center;
+        margin-top: 40px;
+    }
+
     @media (max-width: 800px) {
         .blog {
             width: 100%;

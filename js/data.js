@@ -46,6 +46,51 @@ var blog = [
     }
 ];
 
+// contact me
+
+var contactForm = [];
+
+var contactInfo = [
+    {
+        icon: 'globe',
+        title: 'Adress',
+        info: [
+            {
+                type: 'text',
+                value: '123 6th St. Melbourne, FL 32904, USA'
+            }
+        ]
+    },
+    {
+        icon: 'globe',
+        title: 'Email',
+        info: [
+            {
+                type: 'link',
+                value: 'example@yourdomain.com'
+            },
+            {
+                type: 'link',
+                value: 'info@yourdomain.com'
+            }
+        ]
+    },
+    {
+        icon: 'globe',
+        title: 'Phone',
+        info: [
+            {
+                type: 'text',
+                value: 'Mob: +01 000 000 000'
+            },
+            {
+                type: 'text',
+                value: 'Fax: +01 000 000 000'
+            }
+        ]
+    }
+];
+
 // footer icons
 
 var footerIcons = [

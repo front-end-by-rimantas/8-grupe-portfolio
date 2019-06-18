@@ -6,5 +6,8 @@ window.addEventListener("scroll", function(){
     headerStyle();
 });
 
+// services
+document.getElementById('services_list').innerHTML = generateServices( services );
+
 // footer
 document.getElementById('footer_icons').innerHTML = generateIcons( footerIcons );

@@ -11,12 +11,12 @@ var services = [
     {
         icon: 'mobile',
         title: 'Mobile apps',
-        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique consequatur nisi architecto, nam recusandae assumenda.'
+        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique consequatur nisi architecto.'
     },
     {
         icon: 'code',
         title: 'Web development',
-        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique consequatur nisi architecto, nam recusandae assumenda.'
+        description: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam recusandae assumenda.'
     }
 ];
 

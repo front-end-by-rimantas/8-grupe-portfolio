@@ -14,6 +14,8 @@ function generateIcons( data ) {
     return HTML;
 }
 
+// header
+
 function elementHeight( path ) {
     var height = parseFloat(window.getComputedStyle( document.querySelector( path ) ).height);
     return height;
@@ -69,3 +71,33 @@ function headerStyle() {
         element.className += ' transparent';
     }
 }
+
+// about me
+
+// services
+
+function generateServices( data ) {
+    var HTML = '';
+
+    for ( var i=0; i<data.length; i++ ) {
+        HTML += '<div class="service">\
+                    <i class="fa fa-'+data[i].icon+'"></i>\
+                    <h3>'+data[i].title+'</h3>\
+                    <p>'+data[i].description+'</p>\
+                </div>';
+    }
+
+    return HTML;
+}
+
+// resume
+
+// portfolio
+
+// testimonials
+
+// blogs
+
+// contact me
+
+// footer

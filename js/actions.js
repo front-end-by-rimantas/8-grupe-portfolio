@@ -13,7 +13,7 @@ document.getElementById('services_list').innerHTML = generateServices( services 
 document.getElementById('blog_list').innerHTML = generateBlog( blog );
 
 // contact-me
-document.querySelector('#contact .form').innerHTML = 'FORM GENERATED';
+document.querySelector('#contact .form').innerHTML = generateForm( contactForm );
 document.querySelector('#contact .contact-info').innerHTML = generateContactInfo( contactInfo );
 
 // footer

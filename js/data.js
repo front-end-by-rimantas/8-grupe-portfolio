@@ -48,7 +48,96 @@ var blog = [
 
 // contact me
 
-var contactForm = [];
+var contactForm = {
+    fields: [
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'text'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Name'
+                }
+            ],
+            required: true
+        },
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'email'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Email'
+                }
+            ],
+            required: true
+        },
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'tel'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Phone'
+                }
+            ],
+            required: false
+        },
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'text'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Website'
+                }
+            ],
+            required: false
+        },
+        {
+            type: 'textarea',
+            attr: [
+                {
+                    name: 'placeholder',
+                    value: 'Your message'
+                }
+            ],
+            value: '',
+            required: true
+        }
+    ],
+    submit: {
+        text: 'Send message'
+    }
+};
 
 var contactInfo = [
     {

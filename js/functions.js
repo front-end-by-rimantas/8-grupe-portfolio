@@ -122,6 +122,37 @@ function generateBlog( data ) {
 
 // contact me
 
+function generateForm( data ) {
+    var HTML = '<form>',
+        field,
+        attrHTML = '',
+        attrInfo;
+
+    // konstruojame formos elementus
+    for ( var i=0; i<data.fields.length; i++ ) {
+        field = data.fields[i];
+        attrHTML = '';
+
+        // sulipiname visus elemento atributus i viena
+        for ( var a=0; a<field.attr.length; a++ ) {
+            attrInfo = field.attr[a];
+            attrHTML += ` ${attrInfo.name}="${attrInfo.value}"`;
+        }
+        
+        // konstruojame tik reikiamo tipo elementa
+        if ( field.type === 'input' ) {
+            HTML += `<input ${attrHTML}>`;
+        }
+        if ( field.type === 'textarea' ) {
+            HTML += `<textarea ${attrHTML}></textarea>`;
+        }
+    }
+    
+    HTML += '</form>';
+
+    return HTML;
+}
+
 function generateContactInfo( data ) {
     var HTML = '',
         infoListHTML = '',

@@ -126,25 +126,32 @@ function generateForm( data ) {
     var HTML = '<form>',
         field,
         attrHTML = '',
-        attrInfo;
+        attrInfo,
+        classNames = '';
 
     // konstruojame formos elementus
     for ( var i=0; i<data.fields.length; i++ ) {
         field = data.fields[i];
         attrHTML = '';
+        classNames = '';
 
         // sulipiname visus elemento atributus i viena
         for ( var a=0; a<field.attr.length; a++ ) {
             attrInfo = field.attr[a];
             attrHTML += ` ${attrInfo.name}="${attrInfo.value}"`;
         }
+
+        // sulipiname visas elemento klases
+        classNames = field.className.join(' ');
+        console.log( classNames );
+        
         
         // konstruojame tik reikiamo tipo elementa
         if ( field.type === 'input' ) {
-            HTML += `<input ${attrHTML}>`;
+            HTML += `<input class="${classNames}" ${attrHTML}>`;
         }
         if ( field.type === 'textarea' ) {
-            HTML += `<textarea ${attrHTML}></textarea>`;
+            HTML += `<textarea class="${classNames}" ${attrHTML}></textarea>`;
         }
     }
 

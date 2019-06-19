@@ -66,6 +66,7 @@ var contactForm = {
                     value: 'Name'
                 }
             ],
+            className: ['col-6'],
             required: true
         },
         {
@@ -84,6 +85,7 @@ var contactForm = {
                     value: 'Email'
                 }
             ],
+            className: ['col-6'],
             required: true
         },
         {
@@ -102,6 +104,7 @@ var contactForm = {
                     value: 'Phone'
                 }
             ],
+            className: ['col-6'],
             required: false
         },
         {
@@ -120,6 +123,7 @@ var contactForm = {
                     value: 'Website'
                 }
             ],
+            className: ['col-6', 'pomidoras'],
             required: false
         },
         {
@@ -131,6 +135,7 @@ var contactForm = {
                 }
             ],
             value: '',
+            className: ['col-12'],
             required: true
         }
     ],

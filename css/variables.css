@@ -4,4 +4,15 @@
     --dark-color-1: #171717;
     --dark-color-2: #121212;
     --grey-color: #F3F3F3;
+    --dark-grey-color: #A2A2A2;
+}
+
+body,
+body * {
+    margin: 0;
+    padding: 0;
+    vertical-align: top;
+    box-sizing: border-box;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    word-break: break-word;
 }

@@ -134,9 +134,12 @@ var contactForm = {
             required: true
         }
     ],
-    submit: {
-        text: 'Send message'
-    }
+    actions: [
+        {
+            style: 'red',
+            text: 'Send message'
+        }
+    ]
 };
 
 var contactInfo = [

@@ -147,6 +147,13 @@ function generateForm( data ) {
             HTML += `<textarea ${attrHTML}></textarea>`;
         }
     }
+
+    // konstruojame formos veiksmu elementus (aka mygtukai)
+    HTML += '<div class="actions">';
+        for ( var i=0; i<data.actions.length; i++ ) {
+            HTML += `<div class="btn btn-big btn-${data.actions[i].style}">${data.actions[i].text}</div>`;
+        }
+    HTML += '</div>';
     
     HTML += '</form>';
 

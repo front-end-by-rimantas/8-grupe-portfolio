@@ -7,6 +7,7 @@
     text-decoration: none;
     line-height: 30px;
     font-weight: bold;
+    border: 2px solid var(--red-color);
     border-radius: 15px;
     -webkit-transition: border-radius 500ms; /* For Safari 3.1 to 6.0 */
     transition: border-radius 500ms;
@@ -17,4 +18,12 @@
     }
     .btn:hover {
         border-radius: 5px;
+    }
+    .btn.btn-white {
+        background-color: #FFF;
+        color: var(--red-color);
+    }
+
+    .btn + .btn {
+        margin-left: 10px;
     }

@@ -122,4 +122,85 @@ function generateBlog( data ) {
 
 // contact me
 
+function generateForm( data ) {
+    var HTML = '<form>',
+        field,
+        attrHTML = '',
+        attrInfo,
+        classNames = '';
+
+    // konstruojame formos elementus
+    for ( var i=0; i<data.fields.length; i++ ) {
+        field = data.fields[i];
+        attrHTML = '';
+        classNames = '';
+
+        // sulipiname visus elemento atributus i viena
+        for ( var a=0; a<field.attr.length; a++ ) {
+            attrInfo = field.attr[a];
+            attrHTML += ` ${attrInfo.name}="${attrInfo.value}"`;
+        }
+
+        // sulipiname visas elemento klases
+        classNames = field.className.join(' ');
+        console.log( classNames );
+        
+        
+        // konstruojame tik reikiamo tipo elementa
+        if ( field.type === 'input' ) {
+            HTML += `<div class="${classNames}">
+                        <input ${attrHTML}>
+                    </div>`;
+        }
+        if ( field.type === 'textarea' ) {
+            HTML += `<div class="${classNames}">
+                        <textarea ${attrHTML}></textarea>
+                    </div>`;
+        }
+    }
+
+    // konstruojame formos veiksmu elementus (aka mygtukai)
+    HTML += '<div class="actions">';
+        for ( var i=0; i<data.actions.length; i++ ) {
+            HTML += `<div class="col-12">
+                        <div class="btn btn-big btn-${data.actions[i].style}">${data.actions[i].text}</div>
+                    </div>`;
+        }
+    HTML += '</div>';
+    
+    HTML += '</form>';
+
+    return HTML;
+}
+
+function generateContactInfo( data ) {
+    var HTML = '',
+        infoListHTML = '',
+        infoElement;
+
+    for ( var i=0; i<data.length; i++ ) {
+        infoListHTML = '';
+
+        for ( var p=0; p<data[i].info.length; p++ ) {
+            infoElement = data[i].info[p];
+
+            if ( infoElement.type === 'text' ) {
+                infoListHTML += `<p>${infoElement.value}</p>`;
+            }
+
+            if ( infoElement.type === 'link' ) {
+                infoListHTML += `<a href="mailto:${infoElement.value}">${infoElement.value}</a>`;
+            }
+        }
+
+        HTML += `<div class="info-box">
+                    <i class="fa fa-${data[i].icon}"></i>
+                    <h3>${data[i].title}:</h3>
+                    <div>${infoListHTML}</div>
+                </div>`;
+    }
+
+    return HTML;
+}
+
 // footer

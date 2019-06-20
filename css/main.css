@@ -1,12 +1,3 @@
-body,
-body * {
-    margin: 0;
-    padding: 0;
-    vertical-align: top;
-    box-sizing: border-box;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-}
-
 /* colors classes */
 
 .bg-red {
@@ -37,6 +28,28 @@ body * {
         width: 1200px;
         margin: 0 calc((100% - 1200px) / 2);
     }
+
+    .col-1, .col-2, .col-3, .col-4,
+    .col-5, .col-6, .col-7, .col-8,
+    .col-9, .col-10, .col-11, .col-12 {
+        display: inline-block;
+        float: left;
+        padding: 0 10px;
+        min-height: 1px;
+    }
+
+    .col-12 { width: 100%; }
+    .col-11 { width: calc(100% / 12 * 11); }
+    .col-10 { width: calc(100% / 12 * 10); }
+    .col-9 { width: 75%; }
+    .col-8 { width: calc(100% / 12 * 8); }
+    .col-7 { width: calc(100% / 12 * 7); }
+    .col-6 { width: 50%; }
+    .col-5 { width: calc(100% / 12 * 5); }
+    .col-4 { width: calc(100% / 12 * 4); }
+    .col-3 { width: 25%; }
+    .col-2 { width: calc(100% / 12 * 2); }
+    .col-1 { width: calc(100% / 12); }
 
     @media ( max-width: 1300px ) {
         .container > .row {
@@ -237,6 +250,69 @@ h2 {
     }
 
 /* contact me */
+
+#contact .form {
+    display: inline-block;
+    float: left;
+    width: 60%;
+}
+#contact .contact-info {
+    display: inline-block;
+    float: right;
+    width: 35%;
+}
+    .contact-info > .info-box {
+        display: inline-block;
+        width: 100%;
+        min-height: 86px;
+        margin-bottom: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px #CCC;
+        padding: 10px 20px;
+        background-color: #FFF;
+    }
+        .contact-info > .info-box > i {
+            display: inline-block;
+            width: 50px;
+            height: 50px;
+            float: left;
+            line-height: 50px;
+            text-align: center;
+            font-size: 20px;
+            border-radius: 50%;
+            color: #FFF;
+            background-color: var(--dark-color-1);
+        }
+        .contact-info > .info-box > h3 {
+            display: inline-block;
+            width: calc(100% - 70px);
+            float: right;
+        }
+        .contact-info > .info-box > div {
+            display: inline-block;
+            width: calc(100% - 70px);
+            float: right;
+        }
+            .contact-info > .info-box > div > p {
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 5px;
+            }
+                .contact-info > .info-box > div > p:last-child {
+                    margin-bottom: 0;
+                }
+            .contact-info > .info-box > div > a {
+                display: inline-block;
+                width: 100%;
+                margin-bottom: 5px;
+                text-decoration: none;
+            }
+                .contact-info > .info-box > div > a:last-child {
+                    margin-bottom: 0;
+                }
+    .contact-info > .info-box:last-child {
+        margin-bottom: 0;
+    }
 
 /* footer */
 

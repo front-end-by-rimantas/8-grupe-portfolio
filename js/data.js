@@ -46,6 +46,148 @@ var blog = [
     }
 ];
 
+// contact me
+
+var contactForm = {
+    fields: [
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'text'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Name'
+                }
+            ],
+            className: ['col-6'],
+            required: true
+        },
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'email'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Email'
+                }
+            ],
+            className: ['col-6'],
+            required: true
+        },
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'tel'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Phone'
+                }
+            ],
+            className: ['col-6'],
+            required: false
+        },
+        {
+            type: 'input',
+            attr: [
+                {
+                    name: 'type',
+                    value: 'text'
+                },
+                {
+                    name: 'value',
+                    value: ''
+                },
+                {
+                    name: 'placeholder',
+                    value: 'Website'
+                }
+            ],
+            className: ['col-6', 'pomidoras'],
+            required: false
+        },
+        {
+            type: 'textarea',
+            attr: [
+                {
+                    name: 'placeholder',
+                    value: 'Your message'
+                }
+            ],
+            value: '',
+            className: ['col-12'],
+            required: true
+        }
+    ],
+    actions: [
+        {
+            style: 'red',
+            text: 'Send message'
+        }
+    ]
+};
+
+var contactInfo = [
+    {
+        icon: 'globe',
+        title: 'Adress',
+        info: [
+            {
+                type: 'text',
+                value: '123 6th St. Melbourne, FL 32904, USA'
+            }
+        ]
+    },
+    {
+        icon: 'globe',
+        title: 'Email',
+        info: [
+            {
+                type: 'link',
+                value: 'example@yourdomain.com'
+            },
+            {
+                type: 'link',
+                value: 'info@yourdomain.com'
+            }
+        ]
+    },
+    {
+        icon: 'globe',
+        title: 'Phone',
+        info: [
+            {
+                type: 'text',
+                value: 'Mob: +01 000 000 000'
+            },
+            {
+                type: 'text',
+                value: 'Fax: +01 000 000 000'
+            }
+        ]
+    }
+];
+
 // footer icons
 
 var footerIcons = [

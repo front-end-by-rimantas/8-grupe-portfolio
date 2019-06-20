@@ -9,6 +9,15 @@ window.addEventListener("scroll", function(){
 // services
 document.getElementById('services_list').innerHTML = generateServices( services );
 
+// testimonials
+document.getElementById('testimonials_list').innerHTML = generateTestimonials( testimonials );
+var testimonialsLeftArrow = document.querySelector('#testimonials_list .controls > .fa-angle-left'),
+    testimonialsRightArrow = document.querySelector('#testimonials_list .controls > .fa-angle-right');
+
+testimonialsLeftArrow.addEventListener( 'click', showTestimonial );
+testimonialsRightArrow.addEventListener( 'click', showTestimonial );
+
+
 // blog
 document.getElementById('blog_list').innerHTML = generateBlog( blog );
 

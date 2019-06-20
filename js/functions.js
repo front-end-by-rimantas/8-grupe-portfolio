@@ -102,6 +102,57 @@ function generateServices( data ) {
 
 // testimonials
 
+function generateTestimonials( data ) {
+    var HTML = '<div class="list">',
+        title = '';
+
+    for ( var i=0; i<data.length; i++ ) {
+        title = '';
+        switch ( data[i].gender ) {
+            case 'male':
+                title = 'Mr.';
+                break;
+            case 'female':
+                title = 'Ms.';
+                break;
+            default:
+                title = '(looks like human)';
+                break;
+        }
+        HTML += `<div class="testimonial ${i === 0 ? 'active' : ''}">
+                    <img src="img/testimonials/${data[i].photo}">
+                    <p>${data[i].text}</p>
+                    <h4>- ${title} ${data[i].author}</h4>
+                    <p>${data[i].position}</p>
+                </div>`;
+    }
+    HTML += `</div>
+            <div class="controls">
+                <i class="btn btn-big fa fa-angle-left"></i>`;
+
+    for ( var i=0; i<data.length; i++ ) {
+        HTML += `<div class="dot"></div>`;
+    }
+    
+        HTML += `<i class="btn btn-big fa fa-angle-right"></i>
+            </div>`;
+
+    return HTML;
+}
+
+function showTestimonial( value ) {
+    var direction = '';
+    if ( value.target.className.indexOf('fa-angle-left') >= 0 ) {
+        direction = -1;
+    }
+    if ( value.target.className.indexOf('fa-angle-right') >= 0 ) {
+        direction = 1;
+    }
+    console.log(direction);
+    
+    return;
+}
+
 // blogs
 
 function generateBlog( data ) {
@@ -143,7 +194,6 @@ function generateForm( data ) {
 
         // sulipiname visas elemento klases
         classNames = field.className.join(' ');
-        console.log( classNames );
         
         
         // konstruojame tik reikiamo tipo elementa

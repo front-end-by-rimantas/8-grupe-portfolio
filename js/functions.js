@@ -119,7 +119,7 @@ function generateTestimonials( data ) {
                 title = '(looks like human)';
                 break;
         }
-        HTML += `<div class="testimonial ${i === 0 ? 'active' : ''}">
+        HTML += `<div class="testimonial ${i === 0 ? 'active' : ''}" data-index="${i}">
                     <img src="img/testimonials/${data[i].photo}">
                     <p>${data[i].text}</p>
                     <h4>- ${title} ${data[i].author}</h4>
@@ -141,14 +141,30 @@ function generateTestimonials( data ) {
 }
 
 function showTestimonial( value ) {
-    var direction = '';
+    var direction = '',
+        current_index = parseInt( document.querySelector('.testimonial.active').getAttribute('data-index') ),
+        next_index = 0;
     if ( value.target.className.indexOf('fa-angle-left') >= 0 ) {
         direction = -1;
     }
     if ( value.target.className.indexOf('fa-angle-right') >= 0 ) {
         direction = 1;
     }
-    console.log(direction);
+    
+    next_index = current_index + direction;
+
+    if ( current_index === 0 && direction === -1 ) {
+        next_index = testimonials.length - 1;
+    }
+
+    if ( current_index === (testimonials.length - 1) && direction === 1 ) {
+        next_index = 0;
+    }
+
+    // remove "active" class from all testimonials
+    document.querySelector('.testimonial.active').classList.remove('active');
+    // add "active" class to "next_index" testimonial
+    document.querySelector('.testimonial[data-index="'+next_index+'"]').classList.add('active');
     
     return;
 }

@@ -5,16 +5,30 @@
     background-color: var(--red-color);
     color: #FFF;
     text-decoration: none;
+    text-align: center;
     line-height: 30px;
     font-weight: bold;
     border: 2px solid var(--red-color);
     border-radius: 15px;
     -webkit-transition: border-radius 500ms; /* For Safari 3.1 to 6.0 */
     transition: border-radius 500ms;
+    cursor: pointer;
 }
     .btn.btn-big {
         padding: 5px 20px;
         border-radius: 20px;
+    }
+    .btn.fa {
+        padding: 0px;
+        width: 34px;
+        height: 34px;
+        border-radius: 10px;
+    }
+    .btn.btn-big.fa {
+        width: 44px;
+        height: 44px;
+        line-height: 40px;
+        font-size: 20px;
     }
     .btn:hover {
         border-radius: 5px;

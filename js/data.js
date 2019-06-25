@@ -20,6 +20,32 @@ var services = [
     }
 ];
 
+// testimonials
+
+var testimonials = [
+    {
+        photo: 'person1.jpg',
+        text: 'The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.',
+        author: 'Mandy Doe',
+        gender: 'male',
+        position: 'Founder of Mandy'
+    },
+    {
+        photo: 'person2.jpg',
+        text: 'The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.',
+        author: 'John Doe',
+        gender: 'male',
+        position: 'Founder of Facebooook'
+    },
+    {
+        photo: 'person3.jpg',
+        text: 'The new common language will be more simple and regular than. It will be more Occidental in fact. The new common language will be more simple and regular than. It will be more Occidental in fact.',
+        author: 'Cindy Doe',
+        gender: 'female',
+        position: 'Founder of Ggle'
+    }
+];
+
 // blog
 
 var blog = [

@@ -6,6 +6,9 @@ window.addEventListener("scroll", function(){
     headerStyle();
 });
 
+// portfolio
+document.getElementById('portfolio_list').innerHTML = generatePortfolio( portfolio );
+
 // services
 document.getElementById('services_list').innerHTML = generateServices( services );
 

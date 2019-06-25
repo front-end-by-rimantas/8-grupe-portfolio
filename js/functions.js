@@ -100,6 +100,35 @@ function generateServices( data ) {
 
 // portfolio
 
+function generatePortfolio( data ) {
+    var HTML = '';
+
+    // du analogiski ciklai pereiti per array
+    // for ( var i=0; i<data.length; i++ ) {
+    //     work = data[i];
+    //     console.log((i+1) + ') ' + work.title);
+    // }
+
+    // data.forEach( (work, i) => {
+    //     console.log( (i+1) + ') ' + work.title );
+    // });
+
+    data.forEach( (work) => {
+        HTML += `<div class="portfolio">
+                    <div class="absolute">
+                        <div class="photo" style="background-image: url(img/portfolio/${work.photo});"></div>
+                        <div class="black">
+                            <h4>${work.title}</h4>
+                            <span>${work.tag}</span>
+                        </div>
+                    </div>
+                </div>`;
+    });
+    
+
+    return HTML;
+}
+
 // testimonials
 
 function generateTestimonials( data ) {

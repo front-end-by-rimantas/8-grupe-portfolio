@@ -1,5 +1,10 @@
 "use strict";
 
+/**
+ * Generating links to social media profiles using links and icons
+ * @param {array} data - Array of objects
+ * @returns {string} HTML
+ */
 function generateIcons( data ) {
     var HTML = '';
     

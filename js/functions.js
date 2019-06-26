@@ -100,6 +100,64 @@ function generateServices( data ) {
 
 // portfolio
 
+function generatePortfolio( data ) {
+    var tags = [],
+        HTML = `<div class="filter">
+                    <div class="active">All</div>`;
+
+    // is darbu issirenkame tik tag'us
+    data.forEach( work => {
+        if ( tags.indexOf( work.tag ) === -1 ) {
+            tags.push( work.tag );
+            HTML += `<div>${work.tag}</div>`;
+        }
+    });
+
+    HTML += `</div>
+            <div class="list">`;
+
+    data.forEach( (work) => {
+        HTML += `<div class="portfolio">
+                    <div class="absolute">
+                        <div class="photo" style="background-image: url(img/portfolio/${work.photo});"></div>
+                        <div class="black">
+                            <h4>${work.title}</h4>
+                            <span>${work.tag}</span>
+                        </div>
+                    </div>
+                </div>`;
+    });
+    HTML += `</div>`;
+    
+
+    return HTML;
+}
+
+function filterPortfolio( e ) {
+    var tag = e.target.innerText.toLowerCase();
+
+    if ( tag === 'all' ) {
+        document.querySelectorAll('#portfolio_list .portfolio').forEach( work => {
+            work.style.display = 'inline-block';
+        });
+        return;
+    }
+    
+    // paslepti visus darbus
+    document.querySelectorAll('#portfolio_list .portfolio').forEach( work => {
+        work.style.display = 'none';
+    });
+
+    // parodyti tik tuos kurie turi reikiama tag'a
+    document.querySelectorAll('#portfolio_list .portfolio').forEach( work => {
+        if ( tag === work.querySelector('span').innerText.toLowerCase() ) {
+            work.style.display = 'inline-block';
+        }
+    });
+
+    return;
+}
+
 // testimonials
 
 function generateTestimonials( data ) {

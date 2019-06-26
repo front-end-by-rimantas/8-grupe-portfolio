@@ -101,17 +101,20 @@ function generateServices( data ) {
 // portfolio
 
 function generatePortfolio( data ) {
-    var HTML = '';
+    var tags = [],
+        HTML = `<div class="filter">
+                    <div class="active">All</div>`;
 
-    // du analogiski ciklai pereiti per array
-    // for ( var i=0; i<data.length; i++ ) {
-    //     work = data[i];
-    //     console.log((i+1) + ') ' + work.title);
-    // }
+    // is darbu issirenkame tik tag'us
+    data.forEach( work => {
+        if ( tags.indexOf( work.tag ) === -1 ) {
+            tags.push( work.tag );
+            HTML += `<div>${work.tag}</div>`;
+        }
+    });
 
-    // data.forEach( (work, i) => {
-    //     console.log( (i+1) + ') ' + work.title );
-    // });
+    HTML += `</div>
+            <div class="list">`;
 
     data.forEach( (work) => {
         HTML += `<div class="portfolio">
@@ -124,6 +127,7 @@ function generatePortfolio( data ) {
                     </div>
                 </div>`;
     });
+    HTML += `</div>`;
     
 
     return HTML;

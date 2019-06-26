@@ -20,6 +20,41 @@ var services = [
     }
 ];
 
+// portfolio
+
+var portfolio = [
+    {
+        photo: 'illustration.jpg',
+        title: 'Illustration work',
+        tag: 'illustration'
+    },
+    {
+        photo: 'photoshop.jpg',
+        title: 'Photoshop work',
+        tag: 'photoshop'
+    },
+    {
+        photo: 'illustration1.jpg',
+        title: 'Illustration work',
+        tag: 'illustration'
+    },
+    {
+        photo: 'photoshop1.jpg',
+        title: 'Photoshop work',
+        tag: 'photoshop'
+    },
+    {
+        photo: 'website.jpg',
+        title: 'Website work',
+        tag: 'Website'
+    },
+    {
+        photo: 'apps.jpg',
+        title: 'Apps work',
+        tag: 'App'
+    }
+];
+
 // testimonials
 
 var testimonials = [

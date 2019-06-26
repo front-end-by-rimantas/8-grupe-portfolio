@@ -15,9 +15,18 @@
 </head>
 <body>
     <!-- header start -->
-    <header class="container">
+    <header id="header" class="container">
         <div class="row">
-            header
+            <a href="#" class="logo">Martin Luther</a>
+            <nav>
+                <a href="#">Home</a>
+                <a href="#about">About</a>
+                <a href="#services">Services</a>
+                <a href="#resume">Resume</a>
+                <a href="#work">Our work</a>
+                <a href="#blog">Blog</a>
+                <a href="#contact">Contact</a>
+            </nav>
         </div>
     </header>
     <!-- header end -->
@@ -31,7 +40,7 @@
     <!-- hero end -->
 
     <!-- about me start -->
-    <div class="container">
+    <div id="about" class="container">
         <div class="row">
             <h2 class="heading-left">About <span>me</span></h2>
         </div>
@@ -39,15 +48,22 @@
     <!-- about me end -->
 
     <!-- my services start -->
-    <div class="container bg-grey">
+    <div id="services" class="container bg-grey">
         <div class="row">
             <h2><span>My</span> services</h2>
+        </div>
+        <div id="services_list" class="row">
+            <!-- <div class="service">
+                <i class="fa fa-paint-brush"></i>
+                <h3>Web design</h3>
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Similique consequatur nisi architecto, nam recusandae assumenda.</p>
+            </div> -->
         </div>
     </div>
     <!-- my services end -->
 
     <!-- my resume start -->
-    <div class="container">
+    <div id="resume" class="container">
         <div class="row">
             <h2><span>My</span> resume</h2>
         </div>
@@ -63,7 +79,7 @@
     <!-- frelance end -->
 
     <!-- my portfolio start -->
-    <div class="container">
+    <div id="work" class="container">
         <div class="row">
             <h2><span>My</span> portfolio</h2>
         </div>
@@ -72,24 +88,36 @@
 
     <!-- testimonials start -->
     <div class="container bg-grey">
-        <div class="row">
+        <div id="testimonials_list" class="row testimonials">
             testimonials
         </div>
     </div>
     <!-- testimonials end -->
 
     <!-- my blogs start -->
-    <div class="container">
+    <div id="blog" class="container">
         <div class="row">
             <h2><span>My</span> blogs</h2>
+        </div>
+        <div id="blog_list" class="row">
+            <div class="blog"></div>
+            <div class="blog"></div>
+            <div class="blog"></div>
+        </div>
+        <div class="row view-all">
+            <a href="#" class="btn btn-big">View all</a>
         </div>
     </div>
     <!-- my blogs end -->
 
     <!-- contact me start -->
-    <div class="container bg-grey">
+    <div id="contact" class="container bg-grey">
         <div class="row">
             <h2>Contact <span>me</span></h2>
+        </div>
+        <div class="row">
+            <div class="form">FORM</div>
+            <div class="contact-info">INFO</div>
         </div>
     </div>
     <!-- contact me end -->
@@ -100,8 +128,8 @@
             <div class="row">
                 MARTIN LUTHER
             </div>
-            <div class="row">
-                IKONOS
+            <div id="footer_icons" class="row">
+                <!-- <a href="#" target="_blank" class="fa fa-facebook"></a> -->
             </div>
         </div>
         <div class="container bg-dark-1 footer-bottom">

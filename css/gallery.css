@@ -9,7 +9,13 @@
     #portfolio_list > .filter > div {
         display: inline-block;
         margin: 10px;
+        text-transform: uppercase;
+        cursor: pointer;
     }
+        #portfolio_list > .filter > div:hover,
+        #portfolio_list > .filter > div.active {
+            color: var(--main-color);
+        }
 #portfolio_list > .list {
     display: grid;
     width: 100%;

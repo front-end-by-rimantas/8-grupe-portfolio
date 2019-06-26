@@ -9,6 +9,10 @@ window.addEventListener("scroll", function(){
 // portfolio
 document.getElementById('portfolio_list').innerHTML = generatePortfolio( portfolio );
 
+document.querySelectorAll('#portfolio_list .filter > div').forEach( filter => {
+    filter.addEventListener('click', filterPortfolio);
+});
+
 // services
 document.getElementById('services_list').innerHTML = generateServices( services );
 

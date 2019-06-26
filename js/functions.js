@@ -133,6 +133,31 @@ function generatePortfolio( data ) {
     return HTML;
 }
 
+function filterPortfolio( e ) {
+    var tag = e.target.innerText.toLowerCase();
+
+    if ( tag === 'all' ) {
+        document.querySelectorAll('#portfolio_list .portfolio').forEach( work => {
+            work.style.display = 'inline-block';
+        });
+        return;
+    }
+    
+    // paslepti visus darbus
+    document.querySelectorAll('#portfolio_list .portfolio').forEach( work => {
+        work.style.display = 'none';
+    });
+
+    // parodyti tik tuos kurie turi reikiama tag'a
+    document.querySelectorAll('#portfolio_list .portfolio').forEach( work => {
+        if ( tag === work.querySelector('span').innerText.toLowerCase() ) {
+            work.style.display = 'inline-block';
+        }
+    });
+
+    return;
+}
+
 // testimonials
 
 function generateTestimonials( data ) {

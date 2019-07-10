@@ -232,8 +232,6 @@ function showTestimonial( value ) {
         next_index = 0;
     }
 
-    console.log( 'Is margin '+(current_index*-100)+'% bandau pereiti i margin '+(next_index*-100)+'%' );
-    
     let steps = 200,
         stepsDone = 0;
     let animate = setInterval(function(){

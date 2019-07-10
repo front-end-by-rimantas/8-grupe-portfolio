@@ -34,3 +34,18 @@ document.querySelector('#contact .contact-info').innerHTML = generateContactInfo
 
 // footer
 document.getElementById('footer_icons').innerHTML = generateIcons( footerIcons );
+
+// about me lightbox
+document.querySelector('#about h2').addEventListener('click', showLightbox);
+document.querySelector('.lightbox > .background').addEventListener('click', hideLightbox);
+
+function showLightbox( event ) {
+    document.querySelector('.lightbox').classList.add('active');
+    let video = event.target.getAttribute('data-youtube');
+    document.querySelector('.lightbox .content').innerHTML = `<iframe src="https://www.youtube.com/embed/${video}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`;
+}
+
+function hideLightbox() {
+    document.querySelector('.lightbox').classList.remove('active');
+    document.querySelector('.lightbox .content').innerHTML = '';
+}

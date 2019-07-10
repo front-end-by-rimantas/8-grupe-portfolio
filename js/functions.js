@@ -234,12 +234,6 @@ function showTestimonial( value ) {
 
     console.log( 'Is margin '+(current_index*-100)+'% bandau pereiti i margin '+(next_index*-100)+'%' );
     
-
-    // // remove "active" class from all testimonials
-    // document.querySelector('.testimonial.active').classList.remove('active');
-    // // add "active" class to "next_index" testimonial
-    // document.querySelector('.testimonial[data-index="'+next_index+'"]').classList.add('active');
-
     let steps = 200,
         stepsDone = 0;
     let animate = setInterval(function(){
@@ -247,11 +241,9 @@ function showTestimonial( value ) {
             clearInterval( animate );
             if ( next_index === 0 ) {
                 listElement.style.marginLeft = (testimonials.length - 2) * -100 + '%';
-                console.log('pasiekiau pradzia');
             }
             if ( next_index === testimonials.length - 1 ) {
                 listElement.style.marginLeft = '-100%';
-                console.log('pasiekiau pabaiga');
             }
         } else {
             stepsDone++;

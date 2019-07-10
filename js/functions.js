@@ -166,7 +166,13 @@ function filterPortfolio( e ) {
 // testimonials
 
 function generateTestimonials( data ) {
-    var HTML = '<div class="list" style="margin-left: -100%;">',
+    // data = [1, 2, 3]
+    // data = [3, 1, 2, 3]
+    data.unshift( data[ data.length-1 ] );
+    // data = [3, 1, 2, 3, 1]
+    data.push( data[1] );
+
+    var HTML = `<div class="list" style="margin-left: -100%; width: ${data.length * 100}%;">`,
         title = '';
 
     for ( var i=0; i<data.length; i++ ) {
@@ -182,7 +188,7 @@ function generateTestimonials( data ) {
                 title = '(looks like human)';
                 break;
         }
-        HTML += `<div class="testimonial" data-index="${i}">
+        HTML += `<div class="testimonial" style="width: ${100 / data.length}%;" data-index="${i}">
                     <img src="img/testimonials/${data[i].photo}">
                     <p>${data[i].text}</p>
                     <h4>- ${title} ${data[i].author}</h4>
@@ -193,7 +199,7 @@ function generateTestimonials( data ) {
             <div class="controls">
                 <i class="btn btn-big fa fa-angle-left"></i>`;
 
-    for ( var i=0; i<data.length; i++ ) {
+    for ( var i=0; i<data.length - 2; i++ ) {
         HTML += `<div class="dot"></div>`;
     }
     
@@ -234,18 +240,24 @@ function showTestimonial( value ) {
     // // add "active" class to "next_index" testimonial
     // document.querySelector('.testimonial[data-index="'+next_index+'"]').classList.add('active');
 
-    // listElement.style.marginLeft = (next_index*-100)+'%';
-
-    let steps = 25,
+    let steps = 200,
         stepsDone = 0;
     let animate = setInterval(function(){
         if ( stepsDone === steps ) {
             clearInterval( animate );
+            if ( next_index === 0 ) {
+                listElement.style.marginLeft = (testimonials.length - 2) * -100 + '%';
+                console.log('pasiekiau pradzia');
+            }
+            if ( next_index === testimonials.length - 1 ) {
+                listElement.style.marginLeft = '-100%';
+                console.log('pasiekiau pabaiga');
+            }
         } else {
             stepsDone++;
             listElement.style.marginLeft = (current_index + (next_index-current_index) / steps * stepsDone) * -100 + '%';
         }
-    }, 1000 / steps);
+    }, 1500 / steps);
     
     return;
 }

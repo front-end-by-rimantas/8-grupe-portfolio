@@ -166,7 +166,7 @@ function filterPortfolio( e ) {
 // testimonials
 
 function generateTestimonials( data ) {
-    var HTML = '<div class="list">',
+    var HTML = '<div class="list" style="margin-left: -100%;">',
         title = '';
 
     for ( var i=0; i<data.length; i++ ) {
@@ -182,7 +182,7 @@ function generateTestimonials( data ) {
                 title = '(looks like human)';
                 break;
         }
-        HTML += `<div class="testimonial ${i === 0 ? 'active' : ''}" data-index="${i}">
+        HTML += `<div class="testimonial" data-index="${i}">
                     <img src="img/testimonials/${data[i].photo}">
                     <p>${data[i].text}</p>
                     <h4>- ${title} ${data[i].author}</h4>
@@ -205,8 +205,10 @@ function generateTestimonials( data ) {
 
 function showTestimonial( value ) {
     var direction = '',
-        current_index = parseInt( document.querySelector('.testimonial.active').getAttribute('data-index') ),
+        listElement = document.querySelector('#testimonials_list > .list'),
+        current_index = parseInt( listElement.style.marginLeft ) / -100,
         next_index = 0;
+
     if ( value.target.className.indexOf('fa-angle-left') >= 0 ) {
         direction = -1;
     }
@@ -224,10 +226,26 @@ function showTestimonial( value ) {
         next_index = 0;
     }
 
-    // remove "active" class from all testimonials
-    document.querySelector('.testimonial.active').classList.remove('active');
-    // add "active" class to "next_index" testimonial
-    document.querySelector('.testimonial[data-index="'+next_index+'"]').classList.add('active');
+    console.log( 'Is margin '+(current_index*-100)+'% bandau pereiti i margin '+(next_index*-100)+'%' );
+    
+
+    // // remove "active" class from all testimonials
+    // document.querySelector('.testimonial.active').classList.remove('active');
+    // // add "active" class to "next_index" testimonial
+    // document.querySelector('.testimonial[data-index="'+next_index+'"]').classList.add('active');
+
+    // listElement.style.marginLeft = (next_index*-100)+'%';
+
+    let steps = 25,
+        stepsDone = 0;
+    let animate = setInterval(function(){
+        if ( stepsDone === steps ) {
+            clearInterval( animate );
+        } else {
+            stepsDone++;
+            listElement.style.marginLeft = (current_index + (next_index-current_index) / steps * stepsDone) * -100 + '%';
+        }
+    }, 1000 / steps);
     
     return;
 }
